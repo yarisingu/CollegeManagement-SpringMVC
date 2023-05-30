@@ -25,5 +25,4 @@ public class StudentDao {
 	{
 		return repository.findByMobile(mobile);
 	}
-
 }

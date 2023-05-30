@@ -36,108 +36,110 @@ public class StudentDto {
 	@ManyToOne
 	private Streamdto stream;
 
-	public int getId() {
-		return id;
-	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
 
-	public String getName() {
-		return name;
-	}
+	// public int getId() {
+	// 	return id;
+	// }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+	// public void setId(int id) {
+	// 	this.id = id;
+	// }
 
-	public String getEmail() {
-		return email;
-	}
+	// public String getName() {
+	// 	return name;
+	// }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	// public void setName(String name) {
+	// 	this.name = name;
+	// }
 
-	public long getMobile() {
-		return mobile;
-	}
+	// public String getEmail() {
+	// 	return email;
+	// }
 
-	public void setMobile(long mobile) {
-		this.mobile = mobile;
-	}
+	// public void setEmail(String email) {
+	// 	this.email = email;
+	// }
 
-	public int getAge() {
-		return age;
-	}
+	// public long getMobile() {
+	// 	return mobile;
+	// }
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+	// public void setMobile(long mobile) {
+	// 	this.mobile = mobile;
+	// }
 
-	public Date getDob() {
-		return dob;
-	}
+	// public int getAge() {
+	// 	return age;
+	// }
 
-	public void setDob(Date dob) {
-		this.dob = dob;
-	}
+	// public void setAge(int age) {
+	// 	this.age = age;
+	// }
 
-	public boolean isStatus() {
-		return status;
-	}
+	// public Date getDob() {
+	// 	return dob;
+	// }
 
-	public void setStatus(boolean status) {
-		this.status = status;
-	}
+	// public void setDob(Date dob) {
+	// 	this.dob = dob;
+	// }
 
-	public String getGender() {
-		return gender;
-	}
+	// public boolean isStatus() {
+	// 	return status;
+	// }
 
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
+	// public void setStatus(boolean status) {
+	// 	this.status = status;
+	// }
 
-	public Date getDoj() {
-		return doj;
-	}
+	// public String getGender() {
+	// 	return gender;
+	// }
 
-	public void setDoj(Date doj) {
-		this.doj = doj;
-	}
+	// public void setGender(String gender) {
+	// 	this.gender = gender;
+	// }
 
-	public String getPassword() {
-		return password;
-	}
+	// public Date getDoj() {
+	// 	return doj;
+	// }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+	// public void setDoj(Date doj) {
+	// 	this.doj = doj;
+	// }
 
-	public Cources getCourse() {
-		return course;
-	}
+	// public String getPassword() {
+	// 	return password;
+	// }
 
-	public void setCourse(Cources course) {
-		this.course = course;
-	}
+	// public void setPassword(String password) {
+	// 	this.password = password;
+	// }
 
-	public Streamdto getStream() {
-		return stream;
-	}
+	// public Cources getCourse() {
+	// 	return course;
+	// }
 
-	public void setStream(Streamdto stream) {
-		this.stream = stream;
-	}
+	// public void setCourse(Cources course) {
+	// 	this.course = course;
+	// }
 
-	@Override
-	public String toString() {
-		return "StudentDto [id=" + id + ", name=" + name + ", email=" + email + ", mobile=" + mobile + ", age=" + age
-				+ ", dob=" + dob + ", status=" + status + ", gender=" + gender + ", doj=" + doj + ", password="
-				+ password + ", course=" + course + ", stream=" + stream + "]";
-	}
+	// public Streamdto getStream() {
+	// 	return stream;
+	// }
+
+	// public void setStream(Streamdto stream) {
+	// 	this.stream = stream;
+	// }
+
+	// @Override
+	// public String toString() {
+	// 	return "StudentDto [id=" + id + ", name=" + name + ", email=" + email + ", mobile=" + mobile + ", age=" + age
+	// 			+ ", dob=" + dob + ", status=" + status + ", gender=" + gender + ", doj=" + doj + ", password="
+	// 			+ password + ", course=" + course + ", stream=" + stream + "]";
+	// }
 	
 	
 
