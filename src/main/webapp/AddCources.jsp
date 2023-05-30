@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
-    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="x" %>
+  
     
 <!DOCTYPE html>
 <html>
@@ -10,8 +10,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h1 style="color:green">${success}</h1>
+<h1 style="color:red">${fail}</h1>
 
-<x:form action="/admin/course" method="post">
+<h1>Enter Course Details</h1>
+	<br>
+<form action="/admin/course" method="post">
 
 Cource Name : <input type="text" name="cname" placeholder="Course Name"  required="required">
 <br>
@@ -22,7 +26,7 @@ Cource Duration: <input type="number" name="duration" placeholder="Cource Durati
 <button type="reset">clear</button>
 <button  type="submit">submit</button>
 
-</x:form>
+</form>
 	<a href="/"><button>Home</button></a>
 </body>
 </html>

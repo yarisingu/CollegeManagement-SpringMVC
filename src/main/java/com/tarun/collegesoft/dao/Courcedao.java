@@ -1,5 +1,7 @@
 package com.tarun.collegesoft.dao;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -18,12 +20,16 @@ public class Courcedao {
 		courserepo.save(corces);
 	}
 	
-	public Cources fetch(String name)
+	public Cources fetch(String cname)
 	{
-		return courserepo.findByName(name);
+		return courserepo.findByCname(cname);
 	}
 	
-	
+
+	public List<Cources> fetch() {
+		return courserepo.findAll();
+	}
+
 	
 
 }

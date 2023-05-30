@@ -6,6 +6,6 @@ import com.tarun.collegesoft.dto.Cources;
 
 public interface CourseRepository extends JpaRepository<Cources, Integer> {
 
-	Cources findByName(String name);
+	Cources findByCname(String cname);
 
 }

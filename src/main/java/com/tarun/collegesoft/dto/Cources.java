@@ -1,15 +1,21 @@
 package com.tarun.collegesoft.dto;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
-
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
+import lombok.Data;
 
 @Entity
 @Component
+@Data
 public class Cources {
 	
 	@Id
@@ -19,6 +25,27 @@ public class Cources {
 	double fee;
 	int duration;
 	
+	@ManyToMany(cascade = CascadeType.ALL)
+	List<Streamdto> streams;
+	
+	
+	@OneToMany
+	private List<StudentDto> students;
+	
+	
+	
+	public List<StudentDto> getStudents() {
+		return students;
+	}
+	public void setStudents(List<StudentDto> students) {
+		this.students = students;
+	}
+	public List<Streamdto> getStreams() {
+		return streams;
+	}
+	public void setStreams(List<Streamdto> streams) {
+		this.streams = streams;
+	}
 	public int getId() {
 		return id;
 	}
@@ -45,8 +72,14 @@ public class Cources {
 	}
 	@Override
 	public String toString() {
-		return "Cources [id=" + id + ", cname=" + cname + ", fee=" + fee + ", duration=" + duration + "]";
+		return "Cources [id=" + id + ", cname=" + cname + ", fee=" + fee + ", duration=" + duration + ", streams="
+				+ streams + ", students=" + students + "]";
 	}
+	
+	
+	
+	
+	
 	
 	
 	
