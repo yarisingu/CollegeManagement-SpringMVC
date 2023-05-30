@@ -20,13 +20,13 @@ public class CourcesService {
 	public ModelAndView add(Cources corces)
 	{
 		ModelAndView view = new ModelAndView("Home");
-		Cources corces1 =  coursedao.fetch(corces.getCname());
+		Cources corces1 =  coursedao.fetch(corces.getName());
 		if(corces1==null)
 		{
 			coursedao.add(corces);
 			view.addObject("success","Course Added Successfully");
 		}else {
-			view.addObject("fail",corces.getCname()+" Course Already Exists");
+			view.addObject("fail",corces.getName()+" Course Already Exists");
 		}	
 		return view;       
 	}

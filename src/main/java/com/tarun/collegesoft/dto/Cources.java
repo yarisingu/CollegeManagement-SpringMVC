@@ -21,7 +21,7 @@ public class Cources {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
-	String cname;
+	String name;
 	double fee;
 	int duration;
 	

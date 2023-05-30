@@ -22,7 +22,7 @@ public class Courcedao {
 	
 	public Cources fetch(String cname)
 	{
-		return courserepo.findByCname(cname);
+		return courserepo.findByName(cname);
 	}
 	
 

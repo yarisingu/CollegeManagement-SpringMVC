@@ -17,7 +17,7 @@
 	
 <form action="/admin/stream" method="post">
 
-Stream Name : <input type="text" name="cname" placeholder="Course Name"  required="required">
+Stream Name : <input type="text" name="name" placeholder="Course Name"  required="required">
 <br>
 Steam Fee : <input type="text" name="fee" placeholder="Cource Fee"  required="required">
 <br>
