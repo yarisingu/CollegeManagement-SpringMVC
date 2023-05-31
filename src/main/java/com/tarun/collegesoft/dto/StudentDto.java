@@ -28,6 +28,8 @@ public class StudentDto {
 	private String gender;
 	private Date doj;
 	private String password;
+	private double sslc;
+	private double puc;
 	 
 	
 	@ManyToOne
