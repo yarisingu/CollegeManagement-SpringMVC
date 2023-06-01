@@ -1,4 +1,4 @@
-<%@page import="org.jsp.jesa5.dto.Course"%>
+<%@page import="com.tarun.collegesSoft.dto.Course"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>

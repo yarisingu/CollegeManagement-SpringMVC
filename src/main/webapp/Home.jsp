@@ -1,6 +1,3 @@
-<%@page import="org.jsp.jesa5.dto.Course"%>
-<%@page import="java.util.List"%>
-<%@page import="org.jsp.jesa5.dao.CourseDao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>

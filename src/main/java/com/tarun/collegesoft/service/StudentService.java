@@ -6,6 +6,7 @@ import java.time.Period;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.tarun.collegesoft.dao.CourseDao;
@@ -15,7 +16,7 @@ import com.tarun.collegesoft.dto.Student;
 import com.tarun.collegesoft.helper.Login;
 
 import jakarta.servlet.http.HttpSession;
-
+@Service
 public class StudentService {
    
     @Autowired
