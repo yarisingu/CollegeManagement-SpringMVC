@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -14,12 +15,13 @@ import com.tarun.collegesoft.service.FacultyService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
+@RequestMapping("faculty")
 public class FacultyController {
 
-    @Autowired
+	@Autowired
 	FacultyService facultyService;
 
-    @PostMapping("signup")
+	@PostMapping("signup")
 	public ModelAndView signup(@ModelAttribute Faculty faculty, @RequestParam String date) {
 		return facultyService.signup(faculty, date);
 	}
@@ -28,5 +30,4 @@ public class FacultyController {
 	public ModelAndView login(@ModelAttribute Login login, HttpSession session) {
 		return facultyService.login(login, session);
 	}
-    
 }

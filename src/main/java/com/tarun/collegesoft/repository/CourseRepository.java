@@ -2,10 +2,10 @@ package com.tarun.collegesoft.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.tarun.collegesoft.dto.Cources;
+import com.tarun.collegesoft.dto.Course;
 
-public interface CourseRepository extends JpaRepository<Cources, Integer> {
+public interface CourseRepository extends JpaRepository<Course, Integer> {
 
-	Cources findByName(String name);
+	Course findByName(String name);
 
 }

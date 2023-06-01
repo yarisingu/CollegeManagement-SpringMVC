@@ -1,12 +1,16 @@
 package com.tarun.collegesoft.dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import com.tarun.collegesoft.dto.Staff;
+import com.tarun.collegesoft.repository.StaffRepository;
 
 @Repository
 public class StaffDao {
 
 
-    @Autowired
+	@Autowired
 	StaffRepository repository;
 
 	public void save(Staff staff) {

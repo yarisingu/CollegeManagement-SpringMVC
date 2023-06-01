@@ -9,10 +9,10 @@ import com.tarun.collegesoft.repository.FacultyRepository;
 @Repository
 public class FacultyDao {
     
-    @Autowired
+	@Autowired
 	FacultyRepository repository;
-    
-    public void save(Faculty faculty) {
+
+	public void save(Faculty faculty) {
 		repository.save(faculty);
 	}
 

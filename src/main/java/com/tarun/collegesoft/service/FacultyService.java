@@ -14,10 +14,12 @@ import com.tarun.collegesoft.helper.Login;
 
 import jakarta.servlet.http.HttpSession;
 
+
+
 @Service
 public class FacultyService {
 
-    @Autowired
+	@Autowired
 	FacultyDao facultyDao;
 
 	public ModelAndView signup(Faculty faculty, String date) {
@@ -45,7 +47,7 @@ public class FacultyService {
 			view.setViewName("FacultyLogin");
 			view.addObject("fail", "Email Wrong");
 		} else {
-			if (login.getPasscode().equals(faculty.getPassword())) {
+			if (login.getPassword().equals(faculty.getPassword())) {
 				session.setAttribute("faculty", "faculty");
 				view.setViewName("FacultyHome");
 				view.addObject("success", "Login Success");
@@ -57,5 +59,6 @@ public class FacultyService {
 
 		return view;
 	}
+
     
 }

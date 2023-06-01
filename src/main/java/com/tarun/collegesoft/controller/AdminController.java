@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.tarun.collegesoft.dto.Cources;
-import com.tarun.collegesoft.dto.Streamdto;
+import com.tarun.collegesoft.dto.Course;
+import com.tarun.collegesoft.dto.Stream;
 import com.tarun.collegesoft.helper.Login;
 import com.tarun.collegesoft.service.AdminService;
-import com.tarun.collegesoft.service.CourcesService;
+import com.tarun.collegesoft.service.CourseService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -23,32 +23,29 @@ import jakarta.servlet.http.HttpSession;
 public class AdminController {
 	
 	@Autowired
-	AdminService adminservice;
-	
+	AdminService adminService;
+
 	@Autowired
-	CourcesService courceservice;
-	
+	CourseService courseService;
+
 	@PostMapping("login")
-	public ModelAndView login(@ModelAttribute Login login , HttpSession session){
-		return adminservice.login(login,session);
+	public ModelAndView login(@ModelAttribute Login login, HttpSession session) {
+		return adminService.login(login, session);
 	}
-	
+
 	@PostMapping("course")
-	public ModelAndView Addcource(@ModelAttribute  Cources course){
-		return courceservice.add(course);
+	public ModelAndView addCourse(@ModelAttribute Course course) {
+		return courseService.add(course);
 	}
-	
+
 	@GetMapping("stream")
-	public ModelAndView checkCourse()
-	{
-		return courceservice.checkCourse();
+	public ModelAndView checkCourse() {
+		return courseService.checkCourse();
 	}
 
 	@PostMapping("stream")
-	public ModelAndView saveStream(@ModelAttribute Streamdto stream,@RequestParam String courseName)
-	{
-		return courceservice.saveStream(stream,courseName);
+	public ModelAndView saveStream(@ModelAttribute Stream stream, @RequestParam String courseName) {
+		return courseService.saveStream(stream, courseName);
 	}
-	
 	
 }

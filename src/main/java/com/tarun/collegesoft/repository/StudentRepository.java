@@ -2,14 +2,14 @@ package com.tarun.collegesoft.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.tarun.collegesoft.dto.StudentDto;
+import com.tarun.collegesoft.dto.Student;
 
-public interface StudentRepository  extends JpaRepository<StudentDto, Integer> {
 
-	
 
-	StudentDto findByEmail(String email);
+public interface StudentRepository  extends JpaRepository<Student, Integer> {
 
-	StudentDto findByMobile(long mobile);
+	Student findByEmail(String email);
+
+	Student findByMobile(long mobile);
 
 }

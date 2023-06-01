@@ -14,7 +14,7 @@ import lombok.Data;
 @Entity
 @Component
 @Data
-public class StudentDto {
+public class Student {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,10 +33,10 @@ public class StudentDto {
 	 
 	
 	@ManyToOne
-	private Cources course;
+	private Course course;
 
 	@ManyToOne
-	private Streamdto stream;
+	private Stream stream;
 
 
 

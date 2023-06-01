@@ -10,18 +10,16 @@ import jakarta.servlet.http.HttpSession;
 public class Maincontroller {
 	
 	@GetMapping("/")
-	public ModelAndView homepage()
-	{
-		ModelAndView view = new ModelAndView("Home");
+	public ModelAndView homePage() {
+		ModelAndView view = new ModelAndView("/Home");
 		return view;
 	}
-	
+
 	@GetMapping("logout")
-	public ModelAndView logout(HttpSession session)
-	{
+	public ModelAndView logout(HttpSession session) {
 		session.invalidate();
 		ModelAndView view = new ModelAndView("Home");
-		view.addObject("msg","Logged out Sucessfully");
+		view.addObject("fail", "Logged out Successfully");
 		return view;
 	}
 

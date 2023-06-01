@@ -12,19 +12,17 @@ import jakarta.servlet.http.HttpSession;
 public class AdminService {
 	
 	public ModelAndView login(Login login, HttpSession session) {
-		
 		ModelAndView view = new ModelAndView();
-		
-		if(login.getEmail().equals("admin")){
-			if(login.getPasscode().equals("admin")){
+		if (login.getEmail().equals("admin")) {
+			if (login.getPassword().equals("admin")) {
 				session.setAttribute("admin", "admin");
-				 view.setViewName("AdminHome");
-				 view.addObject("success","Login scucess");
-			}else {
-				 view.setViewName("AdminLogin");
-				 view.addObject("fail", "Password Wrong");
+				view.setViewName("AdminHome");
+				view.addObject("success", "Login Success");
+			} else {
+				view.setViewName("AdminLogin");
+				view.addObject("fail", "Password Wrong");
 			}
-		}else {
+		} else {
 			view.setViewName("AdminLogin");
 			view.addObject("fail", "Email Wrong");
 		}

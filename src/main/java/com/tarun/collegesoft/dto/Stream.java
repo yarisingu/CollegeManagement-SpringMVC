@@ -16,7 +16,7 @@ import lombok.Data;
 @Entity
 @Component
 @Data
-public class Streamdto {
+public class Stream {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +26,7 @@ public class Streamdto {
 	int seat;
 	
 	@OneToMany
-	private List<StudentDto> students;
+	private List<Student> students;
 	
 
 	

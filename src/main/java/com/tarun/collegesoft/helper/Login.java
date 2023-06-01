@@ -8,25 +8,9 @@ import lombok.Data;
 public class Login {
 	
 	private String email;
-	private String passcode;
+	private String password;
 	
-	//public String getEmail() {
-	// 	return email;
-	// }
-	// public void setEmail(String email) {
-	// 	this.email = email;
-	// }
-	// public String getPasscode() {
-	// 	return passcode;
-	// }
-	// public void setPasscode(String passcode) {
-	// 	this.passcode = passcode;
-	// }
-	
-	// @Override
-	// public String toString() {
-	// 	return "Login [email=" + email + ", passcode=" + passcode + "]";
-	// }
+
 	
 
 	

@@ -16,21 +16,21 @@ import lombok.Data;
 @Entity
 @Component
 @Data
-public class Cources {
+public class Course {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	int id;
-	String name;
-	double fee;
-	int duration;
+	private int id;
+	private String name;
+	private double fee;
+	private int duration;
 	
 	@ManyToMany(cascade = CascadeType.ALL)
-	List<Streamdto> streams;
+	List<Stream> streams;
 	
 	
 	@OneToMany
-	private List<StudentDto> students;
+	private List<Student> students;
 	
 	
 	

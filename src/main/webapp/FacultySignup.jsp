@@ -1,16 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        <h1 style="color: green">${success}</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Faculty Signup</title>
+</head>
+<body>
+	<h1 style="color: green">${success}</h1>
 	<h1 style="color: red">${fail}</h1>
 	<form action="/faculty/signup" method="post">
 		Name:<input type="text" name="name"><br> Email:<input
@@ -28,5 +25,5 @@
 	</form>
 	<br>
 	<a href="/FacultyLogin.jsp"><button>Back</button></a>
-    </body>
-    </html>
+</body>
+</html>
