@@ -11,18 +11,16 @@ public class StudentDao {
 	
 	@Autowired
 	StudentRepository repository;
-	
+
 	public void save(StudentDto student) {
 		repository.save(student);
 	}
 
-	public StudentDto fetch(String email)
-	{
+	public StudentDto fetch(String email) {
 		return repository.findByEmail(email);
 	}
 
-	public StudentDto fetch(long mobile)
-	{
+	public StudentDto fetch(long mobile) {
 		return repository.findByMobile(mobile);
 	}
 }

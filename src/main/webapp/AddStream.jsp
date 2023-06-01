@@ -28,7 +28,7 @@ Select Course: <select
 			List<Cources> list = (List<Cources>) request.getAttribute("list");
 			for (Cources course : list) {
 			%>
-			<option><%=course.getCname()%></option>
+			<option><%=course.getName()%></option>
 			<%
 			}
 			%>
@@ -38,7 +38,7 @@ Select Course: <select
 <button  type="submit">submit</button>
 
 </form>
-	<a href="/"><button>Home</button></a>
+	<a href="/AdminHome.jsp"><button>Back</button></a>
 
 </body>
 </html>

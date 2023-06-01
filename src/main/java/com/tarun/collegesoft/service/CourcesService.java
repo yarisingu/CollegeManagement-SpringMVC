@@ -19,14 +19,18 @@ public class CourcesService {
 	
 	public ModelAndView add(Cources corces)
 	{
-		ModelAndView view = new ModelAndView("Home");
+		ModelAndView view = new ModelAndView();
 		Cources corces1 =  coursedao.fetch(corces.getName());
 		if(corces1==null)
 		{
+
 			coursedao.add(corces);
+			view.setViewName("Home");
 			view.addObject("success","Course Added Successfully");
 		}else {
+			view.setViewName("AddCourse");
 			view.addObject("fail",corces.getName()+" Course Already Exists");
+
 		}	
 		return view;       
 	}
@@ -36,7 +40,7 @@ public class CourcesService {
 
 		List<Cources> list = coursedao.fetch();
 		if (list.isEmpty()) {
-			view.setViewName("Home");
+			view.setViewName("/AdminHome");
 			view.addObject("fail", "First Add Course");
 		} else {
 			view.setViewName("AddStream");

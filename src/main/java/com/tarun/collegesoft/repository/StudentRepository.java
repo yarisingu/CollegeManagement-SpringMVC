@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.tarun.collegesoft.dto.StudentDto;
 
-public interface StudentRepository extends JpaRepository<StudentDto, Integer> {
+public interface StudentRepository  extends JpaRepository<StudentDto, Integer> {
 
 	
 

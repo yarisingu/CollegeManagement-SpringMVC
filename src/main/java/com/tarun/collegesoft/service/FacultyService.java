@@ -5,31 +5,34 @@ import java.time.LocalDate;
 import java.time.Period;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.tarun.collegesoft.dao.StudentDao;
-import com.tarun.collegesoft.dto.StudentDto;
+import com.tarun.collegesoft.dao.FacultyDao;
+import com.tarun.collegesoft.dto.Faculty;
 import com.tarun.collegesoft.helper.Login;
 
 import jakarta.servlet.http.HttpSession;
 
-public class StudentService {
+@Service
+public class FacultyService {
+
     @Autowired
-	StudentDao studentDao;
+	FacultyDao facultyDao;
 
-	public ModelAndView signup(StudentDto student, String date) {
+	public ModelAndView signup(Faculty faculty, String date) {
 		ModelAndView view = new ModelAndView();
-		if (studentDao.fetch(student.getEmail()) == null && studentDao.fetch(student.getMobile()) == null) {
+		if (facultyDao.fetch(faculty.getEmail()) == null && facultyDao.fetch(faculty.getMobile()) == null) {
 			Date dob = Date.valueOf(date);
-			student.setDob(dob);
+			faculty.setDob(dob);
 			int age = Period.between(dob.toLocalDate(), LocalDate.now()).getYears();
-			student.setAge(age);
+			faculty.setAge(age);
 
-			studentDao.save(student);
+			facultyDao.save(faculty);
 			view.setViewName("Home");
-			view.addObject("success", "Student Account created Success");
+			view.addObject("success", "Faculty Account created Success");
 		} else {
-			view.setViewName("StudentSignup");
+			view.setViewName("FacultySignup");
 			view.addObject("fail", "Email or Phone already Exists");
 		}
 		return view;
@@ -37,17 +40,17 @@ public class StudentService {
 
 	public ModelAndView login(Login login, HttpSession session) {
 		ModelAndView view = new ModelAndView();
-		StudentDto student = studentDao.fetch(login.getEmail());
-		if (student == null) {
-			view.setViewName("StudentLogin");
+		Faculty faculty = facultyDao.fetch(login.getEmail());
+		if (faculty == null) {
+			view.setViewName("FacultyLogin");
 			view.addObject("fail", "Email Wrong");
 		} else {
-			if (login.getPasscode().equals(student.getPassword())) {
-				session.setAttribute("student", "student");
-				view.setViewName("StudentHome");
+			if (login.getPasscode().equals(faculty.getPassword())) {
+				session.setAttribute("faculty", "faculty");
+				view.setViewName("FacultyHome");
 				view.addObject("success", "Login Success");
 			} else {
-				view.setViewName("StudentLogin");
+				view.setViewName("FacultyLogin");
 				view.addObject("fail", "Password Wrong");
 			}
 		}

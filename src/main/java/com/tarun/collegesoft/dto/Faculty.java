@@ -30,6 +30,7 @@ public class Faculty {
 	private int experience;
 	private String subject;
 	private String education;
+	private String password;
 
 	
 	// public int getId() {
