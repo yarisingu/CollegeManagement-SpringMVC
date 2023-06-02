@@ -16,7 +16,9 @@
 		"vscode": {
 			"extensions": [
 				"pthorsson.vscode-jsp",
-				"vscjava.vscode-maven"
+				"vscjava.vscode-maven",
+				"vscjava.vscode-spring-initializr",
+				"vmware.vscode-boot-dev-pack"
 			]
 		}
 	}
