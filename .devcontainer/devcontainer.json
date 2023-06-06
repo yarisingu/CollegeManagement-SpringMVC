@@ -18,7 +18,8 @@
 				"pthorsson.vscode-jsp",
 				"vscjava.vscode-maven",
 				"vscjava.vscode-spring-initializr",
-				"vmware.vscode-boot-dev-pack"
+				"vmware.vscode-boot-dev-pack",
+				"vscjava.vscode-java-dependency"
 			]
 		}
 	}

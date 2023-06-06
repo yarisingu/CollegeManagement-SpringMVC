@@ -9,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
@@ -32,6 +33,9 @@ public class Student {
 	private double sslc;
 	private double puc;
 	private String quota;
+
+	@Lob
+	byte[] img;
 	 
 	
 	@ManyToOne
