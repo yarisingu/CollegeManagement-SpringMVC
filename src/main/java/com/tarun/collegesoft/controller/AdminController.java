@@ -14,6 +14,7 @@ import com.tarun.collegesoft.dto.Stream;
 import com.tarun.collegesoft.helper.Login;
 import com.tarun.collegesoft.service.AdminService;
 import com.tarun.collegesoft.service.CourseService;
+import com.tarun.collegesoft.service.StudentService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -27,6 +28,9 @@ public class AdminController {
 
 	@Autowired
 	CourseService courseService;
+
+	@Autowired
+	StudentService studentService;
 
 	@PostMapping("login")
 	public ModelAndView login(@ModelAttribute Login login, HttpSession session) {
@@ -46,6 +50,12 @@ public class AdminController {
 	@PostMapping("stream")
 	public ModelAndView saveStream(@ModelAttribute Stream stream, @RequestParam String courseName) {
 		return courseService.saveStream(stream, courseName);
+	}
+	
+	@GetMapping("admission")
+	public ModelAndView admission()
+	{
+		return studentService.fetchAllAcceptedStudent();
 	}
 	
 }

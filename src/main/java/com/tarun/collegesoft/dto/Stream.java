@@ -20,10 +20,13 @@ public class Stream {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	int id;
-	String name;
-	double fee;
-	int seat;
+	private int id;
+	private String name;
+	private double fee;
+	private int seat;
+	private int mseat;
+	private int nseat;
+	
 	
 	@OneToMany
 	private List<Student> students;
@@ -75,11 +78,5 @@ public class Stream {
 	// 	return "Streamdto [id=" + id + ", name=" + name + ", fee=" + fee + ", seat=" + seat + ", students=" + students
 	// 			+ "]";
 	// }
-
-
-	
-	
-	
-	
 
 }

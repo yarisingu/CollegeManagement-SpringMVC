@@ -49,6 +49,8 @@ public class CourseService {
 	public ModelAndView saveStream(Stream stream, String courseName) {
 		ModelAndView view = new ModelAndView();
 
+		
+
 		Course course = courseDao.fetch(courseName);
 		List<Stream> streams = course.getStreams();
 		if (streams == null) {
