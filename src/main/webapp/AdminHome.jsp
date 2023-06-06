@@ -12,6 +12,7 @@
 	<h1>Admin Home Page</h1>
 	<a href="/AddCourse.jsp"><button>Add Course</button></a>
 	<a href="/admin/stream"><button>Add Stream</button></a>
+	<a href="/admin/admission"><button>Approve Admission</button></a>
 	<a href="/logout"><button>Logout</button></a>
 </body>
 </html>
