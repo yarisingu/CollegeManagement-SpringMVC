@@ -1,8 +1,11 @@
 package com.tarun.collegesoft.service;
 
+
+
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.Period;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,15 +17,13 @@ import com.tarun.collegesoft.helper.Login;
 
 import jakarta.servlet.http.HttpSession;
 
-
-
 @Service
 public class FacultyService {
-
 	@Autowired
 	FacultyDao facultyDao;
 
 	public ModelAndView signup(Faculty faculty, String date) {
+		
 		ModelAndView view = new ModelAndView();
 		if (facultyDao.fetch(faculty.getEmail()) == null && facultyDao.fetch(faculty.getMobile()) == null) {
 			Date dob = Date.valueOf(date);
@@ -60,5 +61,4 @@ public class FacultyService {
 		return view;
 	}
 
-    
 }

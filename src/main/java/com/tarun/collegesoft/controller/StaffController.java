@@ -1,5 +1,4 @@
 package com.tarun.collegesoft.controller;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,9 +15,8 @@ import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("staff")
-public class StaffController{
-
-    @Autowired
+public class StaffController {
+	@Autowired
 	StaffService staffService;
 
 	@PostMapping("signup")
@@ -30,5 +28,4 @@ public class StaffController{
 	public ModelAndView login(@ModelAttribute Login login, HttpSession session) {
 		return staffService.login(login, session);
 	}
-
 }

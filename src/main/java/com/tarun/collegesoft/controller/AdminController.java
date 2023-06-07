@@ -18,17 +18,16 @@ import com.tarun.collegesoft.service.StudentService;
 
 import jakarta.servlet.http.HttpSession;
 
-
-@RequestMapping("admin")
 @Controller
+@RequestMapping("admin")
 public class AdminController {
-	
+
 	@Autowired
 	AdminService adminService;
 
 	@Autowired
 	CourseService courseService;
-
+	
 	@Autowired
 	StudentService studentService;
 
@@ -57,5 +56,4 @@ public class AdminController {
 	{
 		return studentService.fetchAllAcceptedStudent();
 	}
-	
 }

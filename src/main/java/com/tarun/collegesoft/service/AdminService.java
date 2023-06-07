@@ -1,6 +1,7 @@
 package com.tarun.collegesoft.service;
 
 
+
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -10,7 +11,7 @@ import jakarta.servlet.http.HttpSession;
 
 @Service
 public class AdminService {
-	
+
 	public ModelAndView login(Login login, HttpSession session) {
 		ModelAndView view = new ModelAndView();
 		if (login.getEmail().equals("admin")) {
@@ -28,5 +29,5 @@ public class AdminService {
 		}
 		return view;
 	}
-	
+
 }

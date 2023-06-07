@@ -1,5 +1,9 @@
 package com.tarun.collegesoft.service;
 
+
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Date;
 import java.text.NumberFormat;
 import java.time.LocalDate;
@@ -8,6 +12,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.tarun.collegesoft.dao.CourseDao;
@@ -18,23 +23,31 @@ import com.tarun.collegesoft.dto.Student;
 import com.tarun.collegesoft.helper.Login;
 
 import jakarta.servlet.http.HttpSession;
+
 @Service
 public class StudentService {
-   
-    @Autowired
+
+	@Autowired
 	StudentDao studentDao;
 
 	@Autowired
 	CourseDao courseDao;
 
-	public ModelAndView signup(Student student, String date) {
+	public ModelAndView signup(Student student, String date, MultipartFile pic) throws IOException {
 		ModelAndView view = new ModelAndView();
 		if (studentDao.fetch(student.getEmail()) == null && studentDao.fetch(student.getMobile()) == null) {
 			Date dob = Date.valueOf(date);
 			student.setDob(dob);
 			int age = Period.between(dob.toLocalDate(), LocalDate.now()).getYears();
 			student.setAge(age);
-
+			
+			byte[] picture = null;
+			if (pic != null) {
+				InputStream inputStream = pic.getInputStream();
+				picture = new byte[inputStream.available()];
+				inputStream.read(picture);
+			}
+			student.setPicture(picture);
 			studentDao.save(student);
 			view.setViewName("Home");
 			view.addObject("success", "Student Account created Success");
@@ -72,8 +85,7 @@ public class StudentService {
 		if (list.isEmpty()) {
 			view.setViewName("StudentHome");
 			view.addObject("fail", "No Courses to Opt");
-		}
-		else {
+		} else {
 			view.setViewName("/EnrollCourse");
 			view.addObject("list", list);
 		}
@@ -142,7 +154,6 @@ public class StudentService {
 		return view;
 	}
 
-
 	public ModelAndView accept(HttpSession session) {
 		ModelAndView view = new ModelAndView("StudentHome");
 		Student student = (Student) session.getAttribute("student");
@@ -155,7 +166,7 @@ public class StudentService {
 		}
 		student.setStream(stream);
 		studentDao.save(student);
-		view.addObject("pass", "Successfully Enrolled Pay fee and Wait for confirmation");
+		view.addObject("success", "Successfully Enrolled Pay fee and Wait for confirmation");
 		return view;
 	}
 
@@ -169,9 +180,7 @@ public class StudentService {
 		return view;
 	}
 
-
-
-    public ModelAndView fetchAllAcceptedStudent() {
+	public ModelAndView fetchAllAcceptedStudent() {
 		ModelAndView view = new ModelAndView();
 		List<Student> list = studentDao.fetchAllApprovedStudents();
 		if (list.isEmpty()) {
@@ -183,7 +192,7 @@ public class StudentService {
 		}
 
 		return view;
-    }
+	}
 
 	public ModelAndView approveStudent(int id) {
 		ModelAndView view=new ModelAndView("AdminHome");
@@ -193,5 +202,4 @@ public class StudentService {
 		studentDao.save(student);
 		return view;
 	}
-
 }

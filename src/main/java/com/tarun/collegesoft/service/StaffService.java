@@ -1,8 +1,10 @@
 package com.tarun.collegesoft.service;
 
+
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.Period;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,9 +18,7 @@ import jakarta.servlet.http.HttpSession;
 
 @Service
 public class StaffService {
-
-
-    @Autowired
+	@Autowired
 	StaffDao staffDao;
 
 	public ModelAndView signup(Staff staff, String date) {
@@ -58,5 +58,4 @@ public class StaffService {
 
 		return view;
 	}
-    
 }

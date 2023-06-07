@@ -30,53 +30,84 @@ public class Stream {
 	
 	@OneToMany
 	private List<Student> students;
+
+
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public double getFee() {
+		return fee;
+	}
+
+
+	public void setFee(double fee) {
+		this.fee = fee;
+	}
+
+
+	public int getSeat() {
+		return seat;
+	}
+
+
+	public void setSeat(int seat) {
+		this.seat = seat;
+	}
+
+
+	public int getMseat() {
+		return mseat;
+	}
+
+
+	public void setMseat(int mseat) {
+		this.mseat = mseat;
+	}
+
+
+	public int getNseat() {
+		return nseat;
+	}
+
+
+	public void setNseat(int nseat) {
+		this.nseat = nseat;
+	}
+
+
+	public List<Student> getStudents() {
+		return students;
+	}
+
+
+	public void setStudents(List<Student> students) {
+		this.students = students;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Stream [id=" + id + ", name=" + name + ", fee=" + fee + ", seat=" + seat + ", mseat=" + mseat
+				+ ", nseat=" + nseat + ", students=" + students + "]";
+	}
 	
-
 	
-	// public List<StudentDto> getStudents() {
-	// 	return students;
-	// }
-
-	// public void setStudents(List<StudentDto> students) {
-	// 	this.students = students;
-	// }
-
-	// public int getSeat() {
-	// 	return seat;
-	// }
-
-	// public void setSeat(int seat) {
-	// 	this.seat = seat;
-	// }
-
-	// public int getId() {
-	// 	return id;
-	// }
-
-	// public void setId(int id) {
-	// 	this.id = id;
-	// }
-
-	// public String getName() {
-	// 	return name;
-	// }
-
-	// public void setName(String name) {
-	// 	this.name = name;
-	// }
-
-	// public double getFee() {
-	// 	return fee;
-	// }
-
-	// public void setFee(double fee) {
-	// 	this.fee = fee;
-	// }
-
-	// @Override
-	// public String toString() {
-	// 	return "Streamdto [id=" + id + ", name=" + name + ", fee=" + fee + ", seat=" + seat + ", students=" + students
-	// 			+ "]";
-	// }
 
 }
