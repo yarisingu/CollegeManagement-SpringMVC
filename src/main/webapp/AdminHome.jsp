@@ -13,6 +13,9 @@
 	<a href="/AddCourse.jsp"><button>Add Course</button></a>
 	<a href="/admin/stream"><button>Add Stream</button></a>
 	<a href="/admin/admission"><button>Approve Admission</button></a>
+	<a href="/admin/viewbranchdata"><button>View Branch Data</button></a>
+	<a href="/admin/studentdata"><button>View Student Data</button></a>
+	<a href="/admin/employeedata"><button>View Employee Data</button></a>
 	<a href="/logout"><button>Logout</button></a>
 </body>
 </html>

@@ -5,6 +5,7 @@ import java.util.Arrays;
 
 import org.springframework.stereotype.Component;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -32,6 +33,7 @@ public class Staff {
     
 	
 	@Lob
+	@Column(columnDefinition = "MEDIUMBLOB")
 	private byte[] picture;
 
 
