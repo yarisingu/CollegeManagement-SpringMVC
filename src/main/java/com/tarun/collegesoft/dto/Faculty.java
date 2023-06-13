@@ -11,6 +11,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
+import jakarta.persistence.SequenceGenerator;
 import lombok.Data;
 
 
@@ -21,7 +22,8 @@ public class Faculty {
 	
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(generator = "facultyid")
+	@SequenceGenerator(initialValue = 100001, allocationSize = 1, name = "facultyid", sequenceName = "facultyid")
 	private int id;
 	private String name;
 	private String email;

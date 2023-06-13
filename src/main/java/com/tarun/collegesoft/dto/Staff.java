@@ -8,9 +8,9 @@ import org.springframework.stereotype.Component;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
+import jakarta.persistence.SequenceGenerator;
 import lombok.Data;
 
 @Entity
@@ -19,7 +19,8 @@ import lombok.Data;
 public class Staff {
 
     @Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(generator = "staffid")
+	@SequenceGenerator(initialValue = 200001, allocationSize = 1, name = "staffid", sequenceName = "staffid")
 	private int id;
 	private String name;
 	private String email;

@@ -11,13 +11,8 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 public class MainController {
 
-	@GetMapping("/")
-	public ModelAndView homePage() {
-		ModelAndView view = new ModelAndView("/Home");
-		return view;
-	}
 
-	@GetMapping("logout")
+	@GetMapping("home/logout")
 	public ModelAndView logout(HttpSession session) {
 		session.invalidate();
 		ModelAndView view = new ModelAndView("Home");

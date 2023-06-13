@@ -9,6 +9,12 @@ public class Login {
 	
 	private String email;
 	private String password;
+	private int id;
+
+
+
+
+	
 	public String getEmail() {
 		return email;
 	}

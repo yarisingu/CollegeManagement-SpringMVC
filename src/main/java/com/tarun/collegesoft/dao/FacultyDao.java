@@ -1,5 +1,7 @@
 package com.tarun.collegesoft.dao;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -22,5 +24,10 @@ public class FacultyDao {
 
 	public Faculty fetch(long mobile) {
 		return repository.findByMobile(mobile);
+	}
+
+	public Optional<Faculty> fetch(int id)
+	{
+		return repository.findById(id);
 	}
 }
