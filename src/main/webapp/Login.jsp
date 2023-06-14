@@ -12,12 +12,16 @@
 <%-- <h1 style="color:green">${success}</h1>
 <h1 style="color:red">${fail}</h1> --%>
 
-<form action="/stafff/login" method="post">
-Email:<input type="text" name="id" placeholder="Enter The id " required="required">
-Password:<input type="text" name="password" placeholder="Enter password" required="required">
-<button>Login</button><button type="reset">Cancel</button>
+
+<div>
+<form action="/alllogin" method="post">
+    Email:<input type="text" name="id" placeholder="Enter The id " required="required">
+    Password:<input type="text" name="password" placeholder="Enter password" required="required">
+    <button>Login</button><button type="reset">Cancel</button>
 </form>
-<a href="/FacultySignup.jsp"><button>New? Click here to Create an Account</button></a>
-<a href="/"><button>Home</button></a>
+<a href="/FacultySignup.jsp"><button>New? Click here to Create an Account For Faculty SignUP</button></a>
+<a href="/StaffSignup.jsp"><button>New? Click here to Create an Account For Staff SignUP</button></a>
+<a href="index.html"><button>Home</button></a>
+</div>
 </body>
 </html>

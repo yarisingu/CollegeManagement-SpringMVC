@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.persistence.SequenceGenerator;
@@ -25,6 +24,7 @@ public class Faculty {
 	@GeneratedValue(generator = "facultyid")
 	@SequenceGenerator(initialValue = 100001, allocationSize = 1, name = "facultyid", sequenceName = "facultyid")
 	private int id;
+	
 	private String name;
 	private String email;
 	private long mobile;
@@ -36,8 +36,6 @@ public class Faculty {
 	private String subject;
 	private String education;
 	private String password;
-
-	
 	@Lob
 	@Column(columnDefinition = "MEDIUMBLOB")
 	private byte[] picture;

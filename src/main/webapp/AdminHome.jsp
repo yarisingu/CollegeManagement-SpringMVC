@@ -16,6 +16,6 @@
 	<a href="/admin/viewbranchdata"><button>View Branch Data</button></a>
 	<a href="/admin/studentdata"><button>View Student Data</button></a>
 	<a href="/admin/employeedata"><button>View Employee Data</button></a>
-	<a href="/logout"><button>Logout</button></a>
+	<a href="/adminnlogout"><button>Logout</button></a>
 </body>
 </html>

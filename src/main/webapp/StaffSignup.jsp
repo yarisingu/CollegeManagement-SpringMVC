@@ -9,7 +9,7 @@
 <body>
 	<h1 style="color: green">${success}</h1>
 	<h1 style="color: red">${fail}</h1>
-	<form action="/staff/signup" method="post">
+	<form action="/staffsignup" method="post">
 		Name:<input type="text" name="name"><br> Email:<input
 			type="email" name="email"><br> Mobile:<input type="text"
 			name="mobile"><br> Gender:<input type="radio"
@@ -22,6 +22,6 @@
 		<button>Signup</button>
 	</form>
 	<br>
-	<a href="/StaffLogin.jsp"><button>Back</button></a>
+	<a href="/Login.jsp"><button>Back</button></a>
 </body>
 </html>

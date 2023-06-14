@@ -11,12 +11,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.tarun.collegesoft.dto.Course;
 import com.tarun.collegesoft.dto.Stream;
-import com.tarun.collegesoft.helper.Login;
 import com.tarun.collegesoft.service.AdminService;
 import com.tarun.collegesoft.service.CourseService;
 import com.tarun.collegesoft.service.StudentService;
-
-import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("admin")
@@ -30,11 +27,6 @@ public class AdminController {
 	
 	@Autowired
 	StudentService studentService;
-
-	@PostMapping("login")
-	public ModelAndView login(@ModelAttribute Login login, HttpSession session) {
-		return adminService.login(login, session);
-	}
 
 	@PostMapping("course")
 	public ModelAndView addCourse(@ModelAttribute Course course) {

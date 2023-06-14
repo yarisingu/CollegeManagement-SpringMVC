@@ -9,6 +9,7 @@
 <body>
 	<h1 style="color: green">${success}</h1>
 	<h1 style="color: red">${fail}</h1>
-	<a href="/logout"><button>Logout</button></a>
+	<h1>Staff Home</h1>
+	<a href="index.html"><button>Logout</button></a>
 </body>
 </html>
