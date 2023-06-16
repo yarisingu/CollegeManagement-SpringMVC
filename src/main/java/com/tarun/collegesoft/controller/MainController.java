@@ -20,7 +20,7 @@ public class MainController {
 	@GetMapping("logout")
 	public ModelAndView logout(HttpSession session) {
 		session.invalidate();
-		ModelAndView view = new ModelAndView("Home");
+		ModelAndView view = new ModelAndView("/Home");
 		view.addObject("fail", "Logged out Successfully");
 		return view;
 	}

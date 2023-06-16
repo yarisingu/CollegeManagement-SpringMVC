@@ -25,7 +25,6 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 @RequestMapping("student")
 public class StudentController {
-
 	@Autowired
 	StudentService studentService;
 

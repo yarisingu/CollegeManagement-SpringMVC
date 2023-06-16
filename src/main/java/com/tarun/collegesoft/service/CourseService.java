@@ -16,7 +16,7 @@ import com.tarun.collegesoft.dto.Stream;
 @Service
 public class CourseService {
 
-	@Autowired
+@Autowired
 	CourseDao courseDao;
 
 	public ModelAndView add(Course course) {
@@ -78,5 +78,4 @@ public class CourseService {
 		}
 		return view;
 	}
-
 }

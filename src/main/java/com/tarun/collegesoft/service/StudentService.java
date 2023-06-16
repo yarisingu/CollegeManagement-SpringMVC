@@ -21,6 +21,7 @@ import com.tarun.collegesoft.dto.Course;
 import com.tarun.collegesoft.dto.Stream;
 import com.tarun.collegesoft.dto.Student;
 import com.tarun.collegesoft.helper.Login;
+import com.tarun.collegesoft.helper.SendMail;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -29,6 +30,9 @@ public class StudentService {
 
 	@Autowired
 	StudentDao studentDao;
+
+	@Autowired
+	SendMail sendMail;
 
 	@Autowired
 	CourseDao courseDao;
@@ -40,7 +44,7 @@ public class StudentService {
 			student.setDob(dob);
 			int age = Period.between(dob.toLocalDate(), LocalDate.now()).getYears();
 			student.setAge(age);
-			
+
 			byte[] picture = null;
 			if (pic != null) {
 				InputStream inputStream = pic.getInputStream();
@@ -67,6 +71,7 @@ public class StudentService {
 		} else {
 			if (login.getPassword().equals(student.getPassword())) {
 				session.setAttribute("student", student);
+				sendMail.send(student);
 				view.setViewName("StudentHome");
 				view.addObject("success", "Login Success");
 			} else {
@@ -195,9 +200,9 @@ public class StudentService {
 	}
 
 	public ModelAndView approveStudent(int id) {
-		ModelAndView view=new ModelAndView("AdminHome");
+		ModelAndView view = new ModelAndView("AdminHome");
 		view.addObject("success", "Approved Success");
-		Student student=studentDao.fetch(id);
+		Student student = studentDao.fetch(id);
 		student.setDoj(Date.valueOf(LocalDate.now()));
 		studentDao.save(student);
 		return view;
