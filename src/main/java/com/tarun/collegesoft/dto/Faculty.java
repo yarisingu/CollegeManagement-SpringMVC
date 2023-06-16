@@ -1,8 +1,6 @@
 package com.tarun.collegesoft.dto;
 
 import java.sql.Date;
-import java.util.Arrays;
-
 import org.springframework.stereotype.Component;
 
 import jakarta.persistence.Column;
