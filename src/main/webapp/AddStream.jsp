@@ -33,6 +33,6 @@
 		<button>Add</button>
 	</form>
 	<br>
-	<a href="/AdminHome.jsp"><button>Back</button></a>
+	<a href="/jsp/AdminHome.jsp"><button>Back</button></a>
 </body>
 </html>
